@@ -13,7 +13,7 @@ type GB2260 struct {
 }
 
 var (
-	_LatestYear = "2014"
+	_LatestYear = "2018"
 )
 
 // NewGB2260 If revision is not specified, use the latest data.
