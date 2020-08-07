@@ -1,3 +1,3 @@
-module github.com/damonchen/gb2260
+module github.com/edwardhey/gb2260
 
 go 1.13
