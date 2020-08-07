@@ -1,13 +1,14 @@
 package gb2260
 
 import (
+	"fmt"
 	"strings"
 	"testing"
 )
 
 func Test_DivisionCountry(t *testing.T) {
-	// 110101 北京市/市辖区/东城区
-	gb := NewGB2260("")
+	// 110101 北京市/东城区
+	gb := NewGB2260("2018")
 
 	division := gb.Get("110101")
 	if division == nil {
@@ -33,15 +34,16 @@ func Test_DivisionCountry(t *testing.T) {
 	}
 
 	stackName := strings.Join(names, "/")
-	if stackName != "北京市/市辖区/东城区" {
-		t.Error("export 北京市/市辖区/东城区, got ", stackName)
+	if stackName != "北京市/东城区" {
+		t.Error("export 北京市/东城区, got ", stackName)
 	}
 }
 
 func Test_DivisionPrefecture(t *testing.T) {
-	// 110100 北京市/市辖区
-	gb := NewGB2260("")
-	division := gb.Get("110100")
+	// 110100 北京市
+	gb := NewGB2260("2018")
+	division := gb.Get("110000")
+	fmt.Println(division)
 	if division == nil {
 		t.Error("division not exist")
 	}
