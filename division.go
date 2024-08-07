@@ -21,6 +21,7 @@ func NewGB2260(revision string) GB2260 {
 	if revision == "" {
 		revision = _LatestYear
 	}
+
 	return GB2260{
 		Store:    divisions[revision],
 		Revision: revision,
